@@ -1,0 +1,12 @@
+/.idea
+/.vs
+/.vscode
+/packages
+/src/b2-csharp-client/bin
+/src/b2-csharp-client/obj
+/src/b2-csharp-client-test/bin
+/src/b2-csharp-client-test/obj
+*.nupkg
+*.xproj.user
+*.lock.json
+TestResult.xml
