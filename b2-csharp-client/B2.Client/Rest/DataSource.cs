@@ -40,8 +40,8 @@ namespace B2.Client.Rest
         /// <returns>The data represented by this object.</returns>
         public string GetAsString()
         {
-            using (Stream s = GetStream())
-            using (StreamReader sr = new StreamReader(s, Encoding.UTF8)) {
+            using (var s = GetStream())
+            using (var sr = new StreamReader(s, Encoding.UTF8)) {
                 return sr.ReadToEnd();
             }
         }
@@ -52,9 +52,9 @@ namespace B2.Client.Rest
         /// <returns>The data represented by this object.</returns>
         public byte[] GetBytes()
         {
-            byte[] buffer = new byte[16 * 1024];
-            using (Stream s = GetStream())
-            using (MemoryStream ms = new MemoryStream()) {
+            var buffer = new byte[16 * 1024];
+            using (var s = GetStream())
+            using (var ms = new MemoryStream()) {
                 int read;
                 while ((read = s.Read(buffer, 0, buffer.Length)) > 0) {
                     ms.Write(buffer, 0, read);
