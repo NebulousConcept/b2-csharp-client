@@ -26,9 +26,9 @@ namespace B2.Client.Rest
         /// </summary>
         IList<Param> UrlParameters { get; }
         /// <summary>
-        /// Request parameters that belong in the HTTP POST body.
+        /// Request parameters that belong in the HTTP body.
         /// </summary>
-        IList<RequestData> PostParameters { get; }
+        IList<RequestData> BodyParameters { get; }
 
         /// <summary>
         /// Convert the Request for a given URL to an HttpClient HttpRequestMessage.
