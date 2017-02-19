@@ -24,14 +24,8 @@ namespace B2.Client.Rest
         /// <param name="streamSupplier">A supplier that returns a stream to the data.</param>
         public DataSource(string streamName, Func<Stream> streamSupplier)
         {
-            if (streamName == null) {
-                throw new ArgumentNullException(nameof(streamName));
-            }
-            if (streamSupplier == null) {
-                throw new ArgumentNullException(nameof(streamSupplier));
-            }
-            StreamName = streamName;
-            this.streamSupplier = streamSupplier;
+            StreamName = streamName.ThrowIfNull(nameof(streamName));
+            this.streamSupplier = streamSupplier.ThrowIfNull(nameof(streamSupplier));
         }
 
         /// <summary>

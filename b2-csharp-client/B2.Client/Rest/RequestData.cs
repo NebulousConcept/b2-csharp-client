@@ -71,10 +71,7 @@ namespace B2.Client.Rest
         /// <param name="paramName">The name of the REST parameter.</param>
         protected RequestData(string paramName)
         {
-            if (paramName == null) {
-                throw new ArgumentNullException(nameof(paramName));
-            }
-            Name = paramName;
+            Name = paramName.ThrowIfNull(nameof(paramName));
         }
 
         /// <summary>

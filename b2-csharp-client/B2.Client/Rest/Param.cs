@@ -1,7 +1,4 @@
-﻿using System;
-
-
-namespace B2.Client.Rest
+﻿namespace B2.Client.Rest
 {
     /// <summary>
     /// Class representing a REST parameter for API calls.
@@ -24,12 +21,8 @@ namespace B2.Client.Rest
         /// <param name="value">The string value of the parameter.</param>
         internal Param(string name, string value)
         {
-            if (name == null) {
-                throw new ArgumentNullException(nameof(name));
-            }
-            if (value == null) {
-                throw new ArgumentNullException(nameof(name));
-            }
+            Name = name.ThrowIfNull(nameof(name));
+            Value = value.ThrowIfNull(nameof(value));
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Net.Http;
 
 
@@ -19,10 +18,7 @@ namespace B2.Client.Rest
         /// <param name="source">The stream supplier.</param>
         internal StreamRequestData(string paramName, DataSource source) : base(paramName)
         {
-            if (source == null) {
-                throw new ArgumentNullException(nameof(source));
-            }
-            this.source = source;
+            this.source = source.ThrowIfNull(nameof(source));
         }
 
         /// <summary>

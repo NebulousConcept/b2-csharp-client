@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 
@@ -20,10 +19,7 @@ namespace B2.Client.Rest
         /// <param name="data">The raw string data for this parameter.</param>
         internal FieldRequestData(string paramName, string data) : base(paramName)
         {
-            if (data == null) {
-                throw new ArgumentNullException(nameof(data));
-            }
-            value = data;
+            value = data.ThrowIfNull(nameof(data));
         }
 
         /// <summary>

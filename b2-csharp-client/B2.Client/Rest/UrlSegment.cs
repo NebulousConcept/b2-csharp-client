@@ -40,7 +40,7 @@ namespace B2.Client.Rest
 
             public LiteralSegment(string value)
             {
-                segment = value;
+                segment = value.ThrowIfNull(nameof(value));
             }
 
             // Literal segments never transform and are simply URI encoded strings
@@ -54,7 +54,7 @@ namespace B2.Client.Rest
 
             public ParameterSegment(string parameterName)
             {
-                paramName = parameterName;
+                paramName = parameterName.ThrowIfNull(nameof(parameterName));
             }
 
             //Parameter segments are converted to the corresponding parameter's value.
