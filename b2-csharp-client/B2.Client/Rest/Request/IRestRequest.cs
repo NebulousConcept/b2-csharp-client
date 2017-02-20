@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using System.Net.Http;
 
+using B2.Client.Rest.Request.Param;
+
 
 namespace B2.Client.Rest.Request
 {
@@ -16,15 +18,15 @@ namespace B2.Client.Rest.Request
         /// <summary>
         /// Request parameters that belong in the HTTP header.
         /// </summary>
-        IList<Param> HeaderParameters { get; }
+        IList<RestParam> HeaderParameters { get; }
         /// <summary>
         /// Request parameters that belong in the HTTP query string.
         /// </summary>
-        IList<Param> QueryParameters { get; }
+        IList<RestParam> QueryParameters { get; }
         /// <summary>
         /// Request parameters that belong in the URL.
         /// </summary>
-        IList<Param> UrlParameters { get; }
+        IList<RestParam> UrlParameters { get; }
         /// <summary>
         /// Request parameters that belong in the HTTP body.
         /// </summary>

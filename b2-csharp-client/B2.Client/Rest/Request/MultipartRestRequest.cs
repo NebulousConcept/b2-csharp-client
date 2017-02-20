@@ -2,6 +2,8 @@
 using System.Linq;
 using System.Net.Http;
 
+using B2.Client.Rest.Request.Param;
+
 
 namespace B2.Client.Rest.Request
 {

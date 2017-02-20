@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-using B2.Client.Rest.Request;
+using B2.Client.Rest.Request.Param;
 
 
 namespace B2.Client.Rest
@@ -20,7 +20,7 @@ namespace B2.Client.Rest
         /// </summary>
         /// <param name="parameters">The parameters to use to transform the segment.</param>
         /// <returns>The transformed segment, as a string.</returns>
-        public abstract string Transform(IEnumerable<Param> parameters);
+        public abstract string Transform(IEnumerable<RestParam> parameters);
 
         /// <summary>
         /// Create a new Literal segment.
@@ -46,7 +46,7 @@ namespace B2.Client.Rest
             }
 
             // Literal segments never transform and are simply URI encoded strings
-            public override string Transform(IEnumerable<Param> parameters) => Uri.EscapeUriString(segment);
+            public override string Transform(IEnumerable<RestParam> parameters) => Uri.EscapeUriString(segment);
         }
 
         private class ParameterSegment : UrlSegment
@@ -60,7 +60,7 @@ namespace B2.Client.Rest
             }
 
             //Parameter segments are converted to the corresponding parameter's value.
-            public override string Transform(IEnumerable<Param> parameters) =>
+            public override string Transform(IEnumerable<RestParam> parameters) =>
                 parameters
                 .Where(p => p.Name == paramName)
                 .Select(p => Uri.EscapeUriString(p.Value))

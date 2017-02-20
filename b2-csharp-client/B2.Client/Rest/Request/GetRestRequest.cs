@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 
+using B2.Client.Rest.Request.Param;
+
 
 namespace B2.Client.Rest.Request
 {
@@ -28,9 +30,9 @@ namespace B2.Client.Rest.Request
         protected override string BuildHttpUrl(IList<UrlSegment> urlSegments) => base.BuildHttpUrl(urlSegments) + AsQueryString();
 
         /// <summary>
-        /// Convert a series of Param objects into a single query string.
+        /// Convert a series of RestParam objects into a single query string.
         /// </summary>
-        /// <returns>The Param objects converted to a single query string.</returns>
+        /// <returns>The RestParam objects converted to a single query string.</returns>
         private string AsQueryString()
         {
             return QueryParameters.Any() ?

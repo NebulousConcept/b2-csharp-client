@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 
-namespace B2.Client.Rest.Request
+namespace B2.Client.Rest.Request.Param
 {
     /// <summary>
     /// Abstract class representing a collection of objects for a Request.

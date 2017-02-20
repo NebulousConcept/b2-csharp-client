@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 
+using B2.Client.Rest.Request.Param;
+
 
 namespace B2.Client.Rest.Request
 {
     public abstract class RestRequest : IRestRequest
     {
         public HttpMethod Method { get; }
-        public IList<Param> HeaderParameters { get; }
-        public IList<Param> QueryParameters { get; }
-        public IList<Param> UrlParameters { get; }
+        public IList<RestParam> HeaderParameters { get; }
+        public IList<RestParam> QueryParameters { get; }
+        public IList<RestParam> UrlParameters { get; }
         public IList<RequestData> BodyParameters { get; }
 
 

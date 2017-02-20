@@ -1,9 +1,9 @@
-﻿namespace B2.Client.Rest.Request
+﻿namespace B2.Client.Rest.Request.Param
 {
     /// <summary>
     /// Class representing a REST parameter for API calls.
     /// </summary>
-    public sealed class Param
+    public sealed class RestParam
     {
         /// <summary>
         /// The name (key) of the parameter.
@@ -19,7 +19,7 @@
         /// </summary>
         /// <param name="name">The name of the parameter.</param>
         /// <param name="value">The string value of the parameter.</param>
-        internal Param(string name, string value)
+        internal RestParam(string name, string value)
         {
             Name = name.ThrowIfNull(nameof(name));
             Value = value.ThrowIfNull(nameof(value));

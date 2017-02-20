@@ -2,7 +2,7 @@
 using System.Linq;
 
 
-namespace B2.Client.Rest.Request
+namespace B2.Client.Rest.Request.Param
 {
     /// <summary>
     /// Contains data objects for use in the body of REST calls.
