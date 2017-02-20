@@ -5,7 +5,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 
 
-namespace B2.Client.Rest
+namespace B2.Client.Rest.Request
 {
     /// <summary>
     /// Represents a named piece of data for a REST request.

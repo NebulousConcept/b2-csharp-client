@@ -1,4 +1,8 @@
-﻿namespace B2.Client.Rest
+﻿using B2.Client.Rest.Request;
+using B2.Client.Rest.Response;
+
+
+namespace B2.Client.Rest.Api
 {
     /// <summary>
     /// More specific interface type to indicate an API which performs authentication.

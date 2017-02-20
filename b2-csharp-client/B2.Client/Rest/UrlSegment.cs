@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 
+using B2.Client.Rest.Request;
+
 
 namespace B2.Client.Rest
 {

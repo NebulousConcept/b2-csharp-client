@@ -3,7 +3,7 @@ using System.Linq;
 using System.Net.Http;
 
 
-namespace B2.Client.Rest
+namespace B2.Client.Rest.Request
 {
     public abstract class RestRequest : IRestRequest
     {

@@ -2,7 +2,7 @@
 using System.Net.Http;
 
 
-namespace B2.Client.Rest
+namespace B2.Client.Rest.Request
 {
     /// <summary>
     /// A RequestData object that contains a reference to a file on a local disk.

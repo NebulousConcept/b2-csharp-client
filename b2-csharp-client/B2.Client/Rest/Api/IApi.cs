@@ -1,7 +1,10 @@
 ﻿using System.Collections.Generic;
 
+using B2.Client.Rest.Request;
+using B2.Client.Rest.Response;
 
-namespace B2.Client.Rest
+
+namespace B2.Client.Rest.Api
 {
     /// <summary>
     /// Base interface for all APIs.

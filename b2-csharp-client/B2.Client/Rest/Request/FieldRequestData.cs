@@ -3,7 +3,7 @@ using System.Net.Http;
 using System.Text;
 
 
-namespace B2.Client.Rest
+namespace B2.Client.Rest.Request
 {
     /// <summary>
     /// A RequestData object that wraps field-size data that can be kept in memory.

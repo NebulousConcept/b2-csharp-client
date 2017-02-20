@@ -3,7 +3,7 @@ using System.IO;
 using System.Text;
 
 
-namespace B2.Client.Rest
+namespace B2.Client.Rest.Request
 {
     /// <summary>
     /// Represents an arbitrary data source which can be streamed or returned as a string or bytes.

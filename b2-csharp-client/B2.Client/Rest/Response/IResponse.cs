@@ -1,4 +1,4 @@
-﻿namespace B2.Client.Rest
+﻿namespace B2.Client.Rest.Response
 {
     /// <summary>
     /// Marker interface to indicate an API response.

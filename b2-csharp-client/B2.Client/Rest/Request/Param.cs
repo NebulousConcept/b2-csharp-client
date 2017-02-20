@@ -1,4 +1,4 @@
-﻿namespace B2.Client.Rest
+﻿namespace B2.Client.Rest.Request
 {
     /// <summary>
     /// Class representing a REST parameter for API calls.
