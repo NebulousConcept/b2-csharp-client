@@ -27,6 +27,7 @@ namespace B2.Client
         /// <returns>The input value, if it is non-null.</returns>
         /// <exception cref="ArgumentNullException">If the input is null.</exception>
         public static T ThrowIfNull<T>(this T input, string name)
+            where T : class
         {
             if (input == null) {
                 throw new ArgumentNullException(name);
