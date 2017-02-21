@@ -31,7 +31,7 @@ namespace B2.Client.Rest.Request
         }
 
         /// <inheritDoc />
-        public virtual HttpRequestMessage ToHttpRequestMessage(IList<UrlSegment> urlSegments)
+        public virtual HttpRequestMessage ToHttpRequestMessage(IEnumerable<UrlSegment> urlSegments)
         {
             var ret = new HttpRequestMessage(Method, BuildHttpUrl(urlSegments));
             foreach (var param in HeaderParameters) {
@@ -41,7 +41,7 @@ namespace B2.Client.Rest.Request
         }
 
         /// <inheritDoc />
-        public string BuildUrl(IList<UrlSegment> urlSegments)
+        public string BuildUrl(IEnumerable<UrlSegment> urlSegments)
             => string.Join("/", urlSegments.Select(s => s.Transform(UrlParameters)));
 
         /// <summary>
@@ -50,6 +50,6 @@ namespace B2.Client.Rest.Request
         /// </summary>
         /// <param name="urlSegments">The segments that make up the URL for the request.</param>
         /// <returns>An URL to the API, excluding endpoint, but including any additional query that forms the HTTP request.</returns>
-        protected virtual string BuildHttpUrl(IList<UrlSegment> urlSegments) => BuildUrl(urlSegments);
+        protected virtual string BuildHttpUrl(IEnumerable<UrlSegment> urlSegments) => BuildUrl(urlSegments);
     }
 }

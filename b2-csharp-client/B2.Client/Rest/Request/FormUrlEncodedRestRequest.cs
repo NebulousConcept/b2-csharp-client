@@ -28,7 +28,7 @@ namespace B2.Client.Rest.Request
         /// <param name="urlSegments">The URL segments for the request URL.</param>
         /// </summary>
         /// <returns>An HttpClient HttpRequestMessage.</returns>
-        public override HttpRequestMessage ToHttpRequestMessage(IList<UrlSegment> urlSegments)
+        public override HttpRequestMessage ToHttpRequestMessage(IEnumerable<UrlSegment> urlSegments)
         {
             var ret = base.ToHttpRequestMessage(urlSegments);
             if (BodyParameters.Any()) {

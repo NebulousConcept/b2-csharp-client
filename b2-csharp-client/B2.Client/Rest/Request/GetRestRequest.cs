@@ -27,7 +27,7 @@ namespace B2.Client.Rest.Request
         /// <param name="urlSegments">The segments that make up the URL for the request.</param>
         /// </summary>
         /// <returns>An HttpClient HttpRequestMessage.</returns>
-        protected override string BuildHttpUrl(IList<UrlSegment> urlSegments) => base.BuildHttpUrl(urlSegments) + AsQueryString();
+        protected override string BuildHttpUrl(IEnumerable<UrlSegment> urlSegments) => base.BuildHttpUrl(urlSegments) + AsQueryString();
 
         /// <summary>
         /// Convert a series of RestParam objects into a single query string.

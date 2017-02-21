@@ -37,13 +37,13 @@ namespace B2.Client.Rest.Request
         /// <param name="urlSegments">The URL segments for the request.</param>
         /// </summary>
         /// <returns>An HttpClient HttpRequestMessage.</returns>
-        HttpRequestMessage ToHttpRequestMessage(IList<UrlSegment> urlSegments);
+        HttpRequestMessage ToHttpRequestMessage(IEnumerable<UrlSegment> urlSegments);
 
         /// <summary>
         /// Form a complete URL for an API from components.
         /// </summary>
         /// <param name="urlSegments">The segments that make up the URL for the request.</param>
         /// <returns>An URL (excluding endpoint) to the API.</returns>
-        string BuildUrl(IList<UrlSegment> urlSegments);
+        string BuildUrl(IEnumerable<UrlSegment> urlSegments);
     }
 }
