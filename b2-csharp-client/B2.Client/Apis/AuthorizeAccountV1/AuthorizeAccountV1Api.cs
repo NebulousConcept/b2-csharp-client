@@ -9,7 +9,7 @@ namespace B2.Client.Apis.AuthorizeAccountV1
     /// <summary>
     /// The 'b2_authorize_account' version 1 API.
     /// </summary>
-    public class AuthorizeAccountV1Api : IAuthenticationApi<AuthorizeAccountV1Request, AuthorizeAccountV1Response>
+    public sealed class AuthorizeAccountV1Api : IAuthenticationApi<AuthorizeAccountV1Request, AuthorizeAccountV1Response>
     {
         /// <inheritdoc />
         public IEnumerable<UrlSegment> ResourceUrl { get; } = new List<UrlSegment> {

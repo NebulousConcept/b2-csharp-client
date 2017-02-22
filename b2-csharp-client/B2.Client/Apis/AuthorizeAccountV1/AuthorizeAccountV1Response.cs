@@ -11,7 +11,7 @@ namespace B2.Client.Apis.AuthorizeAccountV1
     /// Response object for the 'b2_authorize_account' version 1 API.
     /// </summary>
     [DataContract]
-    public class AuthorizeAccountV1Response : IAuthenticationResponse
+    public sealed class AuthorizeAccountV1Response : IAuthenticationResponse
     {
         /// <summary>
         /// The account identifier.

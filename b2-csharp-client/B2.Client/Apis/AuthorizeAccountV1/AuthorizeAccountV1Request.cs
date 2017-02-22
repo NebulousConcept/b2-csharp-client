@@ -10,7 +10,7 @@ namespace B2.Client.Apis.AuthorizeAccountV1
     /// <summary>
     /// Request object for the 'b2_authorize_account' version 1 API.
     /// </summary>
-    public class AuthorizeAccountV1Request : MultipartPostRestRequest
+    public sealed class AuthorizeAccountV1Request : MultipartPostRestRequest
     {
         /// <summary>
         /// Create a new authorization request.
