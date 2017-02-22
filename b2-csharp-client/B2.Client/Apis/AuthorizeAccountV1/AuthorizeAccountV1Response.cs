@@ -45,7 +45,7 @@ namespace B2.Client.Apis.AuthorizeAccountV1
 
         //parameter names have to match property names for deserializer to tie them together
         [SuppressMessage("ReSharper", "InconsistentNaming")]
-        private AuthorizeAccountV1Response(string AccountId, string AuthorizationToken, string ApiUrl, string DownloadUrl,
+        public AuthorizeAccountV1Response(string AccountId, string AuthorizationToken, string ApiUrl, string DownloadUrl,
                                            ulong MinimumPartSize)
         {
             this.AccountId = AccountId;
