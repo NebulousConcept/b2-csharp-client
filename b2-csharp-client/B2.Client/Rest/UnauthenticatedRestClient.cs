@@ -51,7 +51,7 @@ namespace B2.Client.Rest
             };
         }
 
-        private async Task<TRes> HandleResponse<TRes>(HttpResponseMessage apiResponse)
+        private async Task<TRes> HandleResponseAsync<TRes>(HttpResponseMessage apiResponse)
             where TRes : IResponse
         {
             var content = await apiResponse.Content.ReadAsStringAsync();
@@ -68,13 +68,13 @@ namespace B2.Client.Rest
         /// <typeparam name="TReq">The API request type.</typeparam>
         /// <typeparam name="TRes">The API response type.</typeparam>
         /// <returns>A deserialized API response.</returns>
-        public async Task<TRes> PerformAuthenticationRequest<TReq, TRes>(IAuthenticationApi<TReq, TRes> authApi, TReq request)
+        public async Task<TRes> PerformAuthenticationRequestAsync<TReq, TRes>(IAuthenticationApi<TReq, TRes> authApi, TReq request)
             where TReq : IRestRequest
             where TRes : IAuthenticationResponse
         {
             var client = GetHttpClient();
             var response = await client.SendAsync(request.ToHttpRequestMessage(authApi.ResourceUrl));
-            return await HandleResponse<TRes>(response);
+            return await HandleResponseAsync<TRes>(response);
         }
     }
 }
