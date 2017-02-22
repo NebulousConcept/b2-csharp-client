@@ -32,8 +32,8 @@ namespace B2.Client.Rest
         /// Create a new <see cref="UnauthenticatedRestClient"/>.
         /// </summary>
         /// <param name="endpoint">The REST endpoint.</param>
-        /// <param name="webProxy">The proxy to use (<code>null</code> to use no proxy).</param>
-        public UnauthenticatedRestClient(Uri endpoint, IWebProxy webProxy)
+        /// <param name="webProxy">The (optional) proxy to use.</param>
+        public UnauthenticatedRestClient(Uri endpoint, IWebProxy webProxy = null)
         {
             Endpoint = endpoint.ThrowIfNull(nameof(endpoint));
             WebProxy = webProxy;
