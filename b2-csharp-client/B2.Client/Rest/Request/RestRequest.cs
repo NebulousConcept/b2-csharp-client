@@ -35,7 +35,7 @@ namespace B2.Client.Rest.Request
         {
             var ret = new HttpRequestMessage(Method, BuildHttpUrl(urlSegments));
             foreach (var param in HeaderParameters) {
-                ret.Headers.Add(Uri.EscapeDataString(param.Name), Uri.EscapeDataString(param.Value));
+                ret.Headers.Add(param.Name, param.Value);
             }
             return ret;
         }
