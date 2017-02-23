@@ -5,7 +5,7 @@ namespace B2.Client.Test
 {
     internal static class TestEnvironment
     {
-        internal const string B2_API_URL = "https://api.backblazeb2.com";
+        internal const string B2ApiUrl = "https://api.backblazeb2.com";
 
 
         internal static string GetTestConfiguration(string key)
