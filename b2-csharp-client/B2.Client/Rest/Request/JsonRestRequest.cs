@@ -18,11 +18,11 @@ namespace B2.Client.Rest.Request
         /// Create a new REST request whose body is a JSON object containing the parameters.
         /// </summary>
         /// <param name="method">The method to use.</param>
-        /// <param name="headers">The header parameters.</param>
         /// <param name="urlParameters">The URL parameters.</param>
+        /// <param name="headers">The header parameters.</param>
         /// <param name="body">The body parameters.</param>
-        protected JsonRestRequest(HttpMethod method, HeaderParams headers, UrlParams urlParameters, BodyParams body)
-            : base(method, headers, QueryParams.Empty, urlParameters, body, DataParams.Empty) { }
+        protected JsonRestRequest(HttpMethod method, UrlParams urlParameters, HeaderParams headers, BodyParams body)
+            : base(method, urlParameters, headers, QueryParams.Empty, body, DataParams.Empty) { }
 
 
         /// <inheritdoc/>

@@ -22,7 +22,7 @@ namespace B2.Client.Rest.Request
         /// <param name="post">Parameters for the body.</param>
         /// <param name="data">File references to be sent as part of the request.</param>
         protected MultipartRestRequest(HttpMethod method, UrlParams urlParams, HeaderParams headers, BodyParams post, DataParams data) :
-            base(method, headers, QueryParams.Empty, urlParams, post, data) { }
+            base(method, urlParams, headers, QueryParams.Empty, post, data) { }
 
         /// <summary>
         /// Convert the Request for a given URL to an HttpClient HttpRequestMessage.

@@ -17,13 +17,13 @@ namespace B2.Client.Rest.Request
         public IList<RequestData> BodyParameters { get; }
 
 
-        protected RestRequest(HttpMethod method, HeaderParams headerParameters, QueryParams queryParameters, UrlParams urlParameters,
+        protected RestRequest(HttpMethod method, UrlParams urlParameters, HeaderParams headerParameters, QueryParams queryParameters,
                BodyParams bodyParameters, DataParams dataParameters)
         {
             Method = method;
+            UrlParameters = urlParameters.ThrowIfNull(nameof(urlParameters)).ToList();
             HeaderParameters = headerParameters.ThrowIfNull(nameof(headerParameters)).ToList();
             QueryParameters = queryParameters.ThrowIfNull(nameof(queryParameters)).ToList();
-            UrlParameters = urlParameters.ThrowIfNull(nameof(urlParameters)).ToList();
             BodyParameters = bodyParameters.ThrowIfNull(nameof(bodyParameters))
                                            .Select(p => new FieldRequestData(p.Name, p.Value))
                                            .Concat(dataParameters.ThrowIfNull(nameof(dataParameters)))

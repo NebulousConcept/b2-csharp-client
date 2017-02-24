@@ -21,7 +21,7 @@ namespace B2.Client.Rest.Request
         /// <param name="body">The request parameters which should be placed in the body body.</param>
         /// <param name="data">The request data objects which should be placed in the body body.</param>
         protected FormUrlEncodedRestRequest(HttpMethod method, UrlParams urlParameters, HeaderParams headers, BodyParams body,
-            DataParams data) : base(method, headers, QueryParams.Empty, urlParameters, body, data) { }
+            DataParams data) : base(method, urlParameters, headers, QueryParams.Empty, body, data) { }
 
         /// <summary>
         /// Convert the Request for a given URL to an HttpClient HttpRequestMessage.

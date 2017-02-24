@@ -17,6 +17,6 @@ namespace B2.Client.Rest.Request
         /// <param name="headers">The header parameters.</param>
         /// <param name="body">The body parameters.</param>
         protected JsonPostRestRequest(UrlParams urlParameters, HeaderParams headers, BodyParams body)
-            : base(HttpMethod.Post, headers, urlParameters, body) { }
+            : base(HttpMethod.Post, urlParameters, headers, body) { }
     }
 }

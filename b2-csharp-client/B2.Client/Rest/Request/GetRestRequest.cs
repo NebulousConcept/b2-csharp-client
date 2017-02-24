@@ -20,7 +20,7 @@ namespace B2.Client.Rest.Request
         /// <param name="headers">HTTP headers to add to the request.</param>
         /// <param name="query">Parameters for the query string.</param>
         protected GetRestRequest(UrlParams urlParams, HeaderParams headers, QueryParams query) :
-            base(HttpMethod.Get, headers, query, urlParams, BodyParams.Empty, DataParams.Empty) { }
+            base(HttpMethod.Get, urlParams, headers, query, BodyParams.Empty, DataParams.Empty) { }
 
         /// <summary>
         /// Convert the Request for a given URL to an HttpClient HttpRequestMessage.
