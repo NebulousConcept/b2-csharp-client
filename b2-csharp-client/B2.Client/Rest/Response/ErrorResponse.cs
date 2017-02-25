@@ -8,7 +8,7 @@ namespace B2.Client.Rest.Response
     /// A response returned by the REST service when an error occurs.
     /// </summary>
     [DataContract]
-    public class ErrorResponse : IResponse
+    public sealed class ErrorResponse : IResponse
     {
         /// <summary>
         /// The HTTP status code of the error.
