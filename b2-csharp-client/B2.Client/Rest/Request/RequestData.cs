@@ -15,7 +15,7 @@ namespace B2.Client.Rest.Request
         /// <summary>
         /// Return this <see cref="RequestData" /> as an IEnumerable.
         /// </summary>
-        public IEnumerable<RequestData> Items => this;
+        public IEnumerable<RequestData> Items => this.Yield();
         /// <summary>
         /// The name of this parameter.
         /// </summary>
