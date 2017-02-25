@@ -49,9 +49,11 @@ namespace B2.Client.Rest
             where TRes : IResponse
         {
             var content = await apiResponse.Content.ReadAsStringAsync();
-            //assume success for now (think lucky)
-
-            return JsonConvert.DeserializeObject<TRes>(content);
+            if (apiResponse.IsSuccessStatusCode) {
+                return JsonConvert.DeserializeObject<TRes>(content);
+            }
+            var error = JsonConvert.DeserializeObject<ErrorResponse>(content);
+            throw new B2Exception("API call failed", error);
         }
     }
 }
