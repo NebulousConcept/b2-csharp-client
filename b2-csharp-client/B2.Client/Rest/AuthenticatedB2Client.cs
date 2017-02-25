@@ -19,7 +19,6 @@ namespace B2.Client.Rest
         /// Create a new <see cref="AuthenticatedB2Client"/>.
         /// </summary>
         /// <param name="token">The authentication/authorization token.</param>
-        /// <param name="endpoint">The endpoint of the client.</param>
         /// <param name="webProxy">The optional proxy to use.</param>
         public AuthenticatedB2Client(IAuthenticationToken token, IWebProxy webProxy = null) : base(token.Endpoint, webProxy)
         {
@@ -27,9 +26,9 @@ namespace B2.Client.Rest
         }
 
         /// <summary>
-        /// Perform a request to an authentication API and get an authentication response back.
+        /// Perform a request to an API and get a response back.
         /// </summary>
-        /// <param name="authApi">The authentication API to call.</param>
+        /// <param name="api">The API to call.</param>
         /// <param name="request">The request to pass to the API.</param>
         /// <typeparam name="TReq">The API request type.</typeparam>
         /// <typeparam name="TRes">The API response type.</typeparam>
