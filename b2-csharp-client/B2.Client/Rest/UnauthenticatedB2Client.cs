@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
-
-using Newtonsoft.Json;
 
 using B2.Client.Rest.Api;
 using B2.Client.Rest.Request;
@@ -16,49 +13,14 @@ namespace B2.Client.Rest
     /// A basic REST client that can make unauthenticated API calls. Typically the only calls it can make are calls to
     /// <see cref="IAuthenticationApi{TReq,TRes}"/>s.
     /// </summary>
-    public class UnauthenticatedRestClient
+    public class UnauthenticatedB2Client : RestClient
     {
         /// <summary>
-        /// The REST endpoint to make calls to.
-        /// </summary>
-        public Uri Endpoint { get; }
-
-        /// <summary>
-        /// The proxy to use (if any).
-        /// </summary>
-        public IWebProxy WebProxy { get; }
-
-        /// <summary>
-        /// Create a new <see cref="UnauthenticatedRestClient"/>.
+        /// Create a new <see cref="UnauthenticatedB2Client"/>.
         /// </summary>
         /// <param name="endpoint">The REST endpoint.</param>
         /// <param name="webProxy">The (optional) proxy to use.</param>
-        public UnauthenticatedRestClient(Uri endpoint, IWebProxy webProxy = null)
-        {
-            Endpoint = endpoint.ThrowIfNull(nameof(endpoint));
-            WebProxy = webProxy;
-        }
-
-        private HttpClient GetHttpClient()
-        {
-            var useProxy = WebProxy != null;
-            var handler = new HttpClientHandler {
-                Proxy = WebProxy,
-                UseProxy = useProxy
-            };
-            return new HttpClient(handler) {
-                BaseAddress = Endpoint
-            };
-        }
-
-        private async Task<TRes> HandleResponseAsync<TRes>(HttpResponseMessage apiResponse)
-            where TRes : IResponse
-        {
-            var content = await apiResponse.Content.ReadAsStringAsync();
-            //assume success for now (think lucky)
-
-            return JsonConvert.DeserializeObject<TRes>(content);
-        }
+        public UnauthenticatedB2Client(Uri endpoint, IWebProxy webProxy = null) : base(endpoint, webProxy) { }
 
         /// <summary>
         /// Perform a request to an authentication API and get an authentication response back.

@@ -15,7 +15,7 @@ namespace B2.Client.Apis.AuthorizeAccountV1.Test
         [Test]
         public async Task TestAuthorizeAccountSuccess()
         {
-            var client = new UnauthenticatedRestClient(new Uri(TestEnvironment.B2ApiUrl));
+            var client = new UnauthenticatedB2Client(new Uri(TestEnvironment.B2ApiUrl));
             var req = new AuthorizeAccountV1Request(TestEnvironment.GetTestAccountId(), TestEnvironment.GetTestAccountKey());
             var result = await client.PerformAuthenticationRequestAsync(new AuthorizeAccountV1Api(), req);
 
