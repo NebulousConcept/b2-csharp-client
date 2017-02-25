@@ -45,6 +45,6 @@ namespace B2.Client.Rest
         /// <param name="response">A valid authentication response.</param>
         /// <returns>An authenticated B2 client.</returns>
         public AuthenticatedB2Client AuthenticateWithResponse(IAuthenticationResponse response)
-            => new AuthenticatedB2Client(response.GetAuthenticationToken(), Endpoint, WebProxy);
+            => new AuthenticatedB2Client(response.GetAuthenticationToken(), WebProxy);
     }
 }

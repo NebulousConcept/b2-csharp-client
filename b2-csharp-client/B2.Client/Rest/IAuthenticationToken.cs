@@ -1,4 +1,5 @@
-﻿using B2.Client.Rest.Request.Param;
+﻿using System;
+using B2.Client.Rest.Request.Param;
 
 
 namespace B2.Client.Rest
@@ -12,5 +13,10 @@ namespace B2.Client.Rest
         /// The headers to use for authentication.
         /// </summary>
         HeaderParams Headers { get; }
+
+        /// <summary>
+        /// The endpoint to use for authenticated API calls.
+        /// </summary>
+        Uri Endpoint { get; }
     }
 }

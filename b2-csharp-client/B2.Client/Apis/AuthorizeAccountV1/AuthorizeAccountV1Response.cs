@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.Serialization;
 
 using B2.Client.Rest;
@@ -57,6 +58,6 @@ namespace B2.Client.Apis.AuthorizeAccountV1
 
         /// <inheritDoc />
         public IAuthenticationToken GetAuthenticationToken()
-            => new B2AuthenticationToken(AuthorizationToken);
+            => new B2AuthenticationToken(AuthorizationToken, new Uri(ApiUrl));
     }
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Net;
+﻿using System.Net;
 using System.Threading.Tasks;
 using B2.Client.Rest.Api;
 using B2.Client.Rest.Request;
@@ -22,7 +21,7 @@ namespace B2.Client.Rest
         /// <param name="token">The authentication/authorization token.</param>
         /// <param name="endpoint">The endpoint of the client.</param>
         /// <param name="webProxy">The optional proxy to use.</param>
-        public AuthenticatedB2Client(IAuthenticationToken token, Uri endpoint, IWebProxy webProxy = null) : base(endpoint, webProxy)
+        public AuthenticatedB2Client(IAuthenticationToken token, IWebProxy webProxy = null) : base(token.Endpoint, webProxy)
         {
             this.token = token;
         }
