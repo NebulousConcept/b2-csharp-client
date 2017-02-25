@@ -13,7 +13,7 @@ namespace B2.Client.Rest
     /// A basic REST client that can make unauthenticated API calls. Typically the only calls it can make are calls to
     /// <see cref="IAuthenticationApi{TReq,TRes}"/>s.
     /// </summary>
-    public class UnauthenticatedB2Client : RestClient
+    public sealed class UnauthenticatedB2Client : RestClient
     {
         /// <summary>
         /// Create a new <see cref="UnauthenticatedB2Client"/>.
@@ -38,5 +38,13 @@ namespace B2.Client.Rest
             var response = await client.SendAsync(request.ToHttpRequestMessage(authApi.ResourceUrl));
             return await HandleResponseAsync<TRes>(response);
         }
+
+        /// <summary>
+        /// Associate a valid authentication response with a B2 client.
+        /// </summary>
+        /// <param name="response">A valid authentication response.</param>
+        /// <returns>An authenticated B2 client.</returns>
+        public AuthenticatedB2Client AuthenticateWithResponse(IAuthenticationResponse response)
+            => new AuthenticatedB2Client(response.GetAuthenticationToken(), Endpoint, WebProxy);
     }
 }

@@ -55,10 +55,8 @@ namespace B2.Client.Apis.AuthorizeAccountV1
             this.MinimumPartSize = MinimumPartSize;
         }
 
+        /// <inheritDoc />
         public IAuthenticationToken GetAuthenticationToken()
-        {
-            //TODO worry about this once unauthenticated API calls are working
-            throw new System.NotImplementedException();
-        }
+            => new B2AuthenticationToken(AuthorizationToken);
     }
 }

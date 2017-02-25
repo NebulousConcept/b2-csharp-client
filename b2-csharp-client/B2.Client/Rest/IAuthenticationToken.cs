@@ -1,10 +1,16 @@
-﻿namespace B2.Client.Rest
+﻿using B2.Client.Rest.Request.Param;
+
+
+namespace B2.Client.Rest
 {
     /// <summary>
     /// An authentication token returned from an authentication API call, which will be used to authenticate or sign subsequent requests.
     /// </summary>
     public interface IAuthenticationToken
     {
-
+        /// <summary>
+        /// The headers to use for authentication.
+        /// </summary>
+        HeaderParams Headers { get; }
     }
 }
