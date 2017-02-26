@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Linq;
-using B2.Client.Rest;
 
 
-namespace B2.Client.Apis.ListBucketsV1
+namespace B2.Client.Rest
 {
     /// <summary>
     /// Represents the type of a bucket in a B2 account.
