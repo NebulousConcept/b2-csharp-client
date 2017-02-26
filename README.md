@@ -11,10 +11,10 @@ var accountId = "my_account_id";
 var applicationKey = "my_app_key";
 var client = new UnauthenticatedB2Client(new Uri("https://api.backblazeb2.com"));
 var authedClient = client.AuthenticateWithResponse(
-    await client.PerformAuthenticationRequestAsync(new AuthorizeAccountV1Api(),
+    await client.PerformAuthenticationRequestAsync(B2Apis.AuthorizeAccountV1,
         new AuthorizeAccountV1Request(accountId, applicationKey)));
 
-var result = await authedClient.PerformApiRequestAsync(new ListBucketsV1Api(),
+var result = await authedClient.PerformApiRequestAsync(B2Apis.ListBucketsV1,
     new ListBucketsV1Request(accountId));
 foreach (var bucket in result.Buckets) {
     Console.WriteLine(bucket.BucketName);
