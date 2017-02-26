@@ -60,7 +60,7 @@ namespace B2.Client.Apis.ListBucketsV1
             /// The type of the bucket.
             /// </summary>
             [DataMember(Name = "bucketType", IsRequired = true)]
-            public string BucketType { get; }
+            public BucketType BucketType { get; }
 
             /// <summary>
             /// The lifecycle rules for the bucket.
@@ -85,7 +85,7 @@ namespace B2.Client.Apis.ListBucketsV1
             /// <param name="LifecycleRules">The lifecycle rules for the bucket.</param>
             /// <param name="Revision">The revision number of the bucket, which increments every time it is changed.</param>
             [SuppressMessage("ReSharper", "InconsistentNaming")]
-            public B2Bucket(string AccountId, string BucketId, string BucketName, string BucketType,
+            public B2Bucket(string AccountId, string BucketId, string BucketName, BucketType BucketType,
                             List<B2LifecycleRule> LifecycleRules, uint Revision)
             {
                 this.AccountId = AccountId;
