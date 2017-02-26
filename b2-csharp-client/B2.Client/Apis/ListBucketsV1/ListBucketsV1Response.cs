@@ -1,5 +1,8 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.Serialization;
+
+using B2.Client.Rest;
 using B2.Client.Rest.Response;
 
 
@@ -22,6 +25,7 @@ namespace B2.Client.Apis.ListBucketsV1
         /// Create a new <see cref="ListBucketsV1Response"/>.
         /// </summary>
         /// <param name="Buckets"></param>
+        [SuppressMessage("ReSharper", "InconsistentNaming")]
         public ListBucketsV1Response(List<B2Bucket> Buckets)
         {
             this.Buckets = Buckets;
@@ -59,6 +63,12 @@ namespace B2.Client.Apis.ListBucketsV1
             public string BucketType { get; }
 
             /// <summary>
+            /// The lifecycle rules for the bucket.
+            /// </summary>
+            [DataMember(Name = "lifecycleRules", IsRequired = true)]
+            public List<B2LifecycleRule> LifecycleRules { get; }
+
+            /// <summary>
             /// The revision number of the bucket, which increments every time it is changed.
             /// </summary>
             [DataMember(Name = "revision", IsRequired = true)]
@@ -72,13 +82,17 @@ namespace B2.Client.Apis.ListBucketsV1
             /// <param name="BucketId">The ID of the bucket.</param>
             /// <param name="BucketName">The name of the bucket.</param>
             /// <param name="BucketType">The type of the bucket.</param>
+            /// <param name="LifecycleRules">The lifecycle rules for the bucket.</param>
             /// <param name="Revision">The revision number of the bucket, which increments every time it is changed.</param>
-            public B2Bucket(string AccountId, string BucketId, string BucketName, string BucketType, uint Revision)
+            [SuppressMessage("ReSharper", "InconsistentNaming")]
+            public B2Bucket(string AccountId, string BucketId, string BucketName, string BucketType,
+                            List<B2LifecycleRule> LifecycleRules, uint Revision)
             {
                 this.AccountId = AccountId;
                 this.BucketId = BucketId;
                 this.BucketName = BucketName;
                 this.BucketType = BucketType;
+                this.LifecycleRules = LifecycleRules;
                 this.Revision = Revision;
             }
         }
