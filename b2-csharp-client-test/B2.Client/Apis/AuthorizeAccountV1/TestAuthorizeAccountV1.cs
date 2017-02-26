@@ -17,7 +17,7 @@ namespace B2.Client.Apis.AuthorizeAccountV1.Test
         {
             var client = new UnauthenticatedB2Client(new Uri(TestEnvironment.B2ApiUrl));
             var req = new AuthorizeAccountV1Request(TestEnvironment.GetTestAccountId(), TestEnvironment.GetTestAccountKey());
-            var result = await client.PerformAuthenticationRequestAsync(new AuthorizeAccountV1Api(), req);
+            var result = await client.PerformAuthenticationRequestAsync(B2Apis.AuthorizeAccountV1, req);
 
             Assert.That(result.AccountId, Is.EqualTo(TestEnvironment.GetTestAccountId()));
             Assert.That(result.AuthorizationToken, Is.Not.Null);
