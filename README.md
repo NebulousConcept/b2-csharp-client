@@ -9,7 +9,7 @@ Sample code:
 ```C#
 var accountId = "my_account_id";
 var applicationKey = "my_app_key";
-var client = new UnauthenticatedB2Client(new Uri("https://api.backblazeb2.com");
+var client = new UnauthenticatedB2Client(new Uri("https://api.backblazeb2.com"));
 var authedClient = client.AuthenticateWithResponse(
     await client.PerformAuthenticationRequestAsync(new AuthorizeAccountV1Api(),
         new AuthorizeAccountV1Request(accountId, applicationKey)));
