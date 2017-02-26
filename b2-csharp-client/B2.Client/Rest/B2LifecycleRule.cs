@@ -9,7 +9,7 @@ namespace B2.Client.Rest
     /// A lifecycle rule controlling the behavior of files uploaded to a bucket.
     /// </summary>
     [DataContract]
-    public sealed class B2LifecycleRule
+    public sealed class B2LifecycleRule : IEquatable<B2LifecycleRule>
     {
         /// <summary>
         /// Predefined rule for keeping only the most recent version of a file.
@@ -58,6 +58,44 @@ namespace B2.Client.Rest
             this.FilenamePrefix = FilenamePrefix.ThrowIfNull(nameof(FilenamePrefix));
             this.DaysFromUploadingToHiding = DaysFromUploadingToHiding;
             this.DaysFromHidingToDeleting = DaysFromHidingToDeleting;
+        }
+
+        /// <inheritdoc/>
+        public bool Equals(B2LifecycleRule other)
+        {
+            if (ReferenceEquals(null, other)) {
+                return false;
+            }
+            if (ReferenceEquals(this, other)) {
+                return true;
+            }
+            return FilenamePrefix.Equals(other.FilenamePrefix)
+                   && DaysFromUploadingToHiding == other.DaysFromUploadingToHiding
+                   && DaysFromHidingToDeleting == other.DaysFromHidingToDeleting;
+        }
+
+        /// <inheritdoc/>
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) {
+                return false;
+            }
+            if (ReferenceEquals(this, obj)) {
+                return true;
+            }
+            var a = obj as B2LifecycleRule;
+            return a != null && Equals(a);
+        }
+
+        /// <inheritdoc/>
+        public override int GetHashCode()
+        {
+            unchecked {
+                var hashCode = FilenamePrefix.GetHashCode();
+                hashCode = (hashCode * 397) ^ DaysFromUploadingToHiding.GetHashCode();
+                hashCode = (hashCode * 397) ^ DaysFromHidingToDeleting.GetHashCode();
+                return hashCode;
+            }
         }
     }
 }
