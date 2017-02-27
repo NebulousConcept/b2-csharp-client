@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading.Tasks;
 
 using B2.Client.Apis.AuthorizeAccountV1;
 using B2.Client.Rest;
@@ -14,6 +13,7 @@ namespace B2.Client.Test.Apis.ErrorResponse
     {
 
         [Test]
+        [Category("integration")]
         public void TestErrorResponseFromApiCall()
         {
             var client = new UnauthenticatedB2Client(new Uri(TestEnvironment.B2ApiUrl));

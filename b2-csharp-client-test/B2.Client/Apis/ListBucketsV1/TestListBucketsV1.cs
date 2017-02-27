@@ -14,6 +14,7 @@ namespace B2.Client.Test.Apis.ListBucketsV1
     public class TestListBucketsV1
     {
         [Test]
+        [Category("integration")]
         public async Task TestListBucketsV1Success()
         {
             var client = new UnauthenticatedB2Client(new Uri(TestEnvironment.B2ApiUrl));
