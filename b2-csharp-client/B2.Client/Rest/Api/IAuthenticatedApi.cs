@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using B2.Client.Rest.Request;
+﻿using B2.Client.Rest.Request;
 using B2.Client.Rest.Response;
 
 

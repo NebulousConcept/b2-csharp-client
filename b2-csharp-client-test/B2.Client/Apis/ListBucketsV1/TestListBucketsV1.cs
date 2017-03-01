@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Threading.Tasks;
 
+using NUnit.Framework;
+
 using B2.Client.Apis;
 using B2.Client.Apis.AuthorizeAccountV1;
 using B2.Client.Apis.ListBucketsV1;
 using B2.Client.Rest;
-using NUnit.Framework;
 
 
 namespace B2.Client.Test.Apis.ListBucketsV1

@@ -1,5 +1,7 @@
 ﻿using System;
+
 using NUnit.Framework;
+
 
 namespace B2.Client.Test
 {

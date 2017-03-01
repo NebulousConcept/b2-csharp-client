@@ -1,9 +1,9 @@
 ﻿using System;
 
+using NUnit.Framework;
+
 using B2.Client.Apis.AuthorizeAccountV1;
 using B2.Client.Rest;
-
-using NUnit.Framework;
 
 
 namespace B2.Client.Test.Apis.ErrorResponse
