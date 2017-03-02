@@ -5,6 +5,11 @@
     /// </summary>
     public interface IAuthenticationResponse : IResponse
     {
+        /// <summary>
+        /// Retrieve the authentication token from the response. The token will contain information to use for authorizing or
+        /// signing subsequent requests.
+        /// </summary>
+        /// <returns>An authentication token.</returns>
         IAuthenticationToken GetAuthenticationToken();
     }
 }
