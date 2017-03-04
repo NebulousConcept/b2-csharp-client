@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 
@@ -10,3 +11,4 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
 [assembly: Guid("4689691B-1815-476E-98CF-F73889ABB570")]
+[assembly: InternalsVisibleTo("b2-csharp-client-test")]
