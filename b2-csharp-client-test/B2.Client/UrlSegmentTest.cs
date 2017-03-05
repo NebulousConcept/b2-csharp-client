@@ -10,6 +10,7 @@ namespace B2.Client.Test
     public class UrlSegmentTest
     {
         [Test]
+        [Category("unit")]
         public void TestLiteralSegmentDoesNotTransform()
         {
             const string paramName = "paramName";
@@ -22,6 +23,7 @@ namespace B2.Client.Test
         }
 
         [Test]
+        [Category("unit")]
         public void TestLiteralSegmentDoesNotThrow()
         {
             const string paramName = "paramName";
@@ -40,6 +42,7 @@ namespace B2.Client.Test
         }
 
         [Test]
+        [Category("unit")]
         public void TestParameterSegmentDoesTransform()
         {
             const string paramName = "paramName";
@@ -52,6 +55,7 @@ namespace B2.Client.Test
         }
 
         [Test]
+        [Category("unit")]
         public void TestParameterSegmentWithNoMatchThrows()
         {
             const string paramName = "paramName";
@@ -65,6 +69,7 @@ namespace B2.Client.Test
         }
 
         [Test]
+        [Category("unit")]
         public void TestParameterSegmentWithMultipleMatchesThrows()
         {
             const string paramName = "paramName";
