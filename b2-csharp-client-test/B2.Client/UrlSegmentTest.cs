@@ -1,7 +1,7 @@
-﻿using B2.Client.Rest;
-using B2.Client.Rest.Request.Param;
+﻿using NUnit.Framework;
 
-using NUnit.Framework;
+using B2.Client.Rest;
+using B2.Client.Rest.Request.Param;
 
 
 namespace B2.Client.Test
@@ -10,7 +10,7 @@ namespace B2.Client.Test
     public class UrlSegmentTest
     {
         [Test]
-        [Category("unit")]
+        [Category(TestCategories.Unit)]
         public void TestLiteralSegmentDoesNotTransform()
         {
             const string paramName = "paramName";
@@ -23,7 +23,7 @@ namespace B2.Client.Test
         }
 
         [Test]
-        [Category("unit")]
+        [Category(TestCategories.Unit)]
         public void TestLiteralSegmentDoesNotThrow()
         {
             const string paramName = "paramName";
@@ -42,7 +42,7 @@ namespace B2.Client.Test
         }
 
         [Test]
-        [Category("unit")]
+        [Category(TestCategories.Unit)]
         public void TestParameterSegmentDoesTransform()
         {
             const string paramName = "paramName";
@@ -55,7 +55,7 @@ namespace B2.Client.Test
         }
 
         [Test]
-        [Category("unit")]
+        [Category(TestCategories.Unit)]
         public void TestParameterSegmentWithNoMatchThrows()
         {
             const string paramName = "paramName";
@@ -69,7 +69,7 @@ namespace B2.Client.Test
         }
 
         [Test]
-        [Category("unit")]
+        [Category(TestCategories.Unit)]
         public void TestParameterSegmentWithMultipleMatchesThrows()
         {
             const string paramName = "paramName";

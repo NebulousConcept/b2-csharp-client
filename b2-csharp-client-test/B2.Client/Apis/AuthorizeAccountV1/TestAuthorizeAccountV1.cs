@@ -13,7 +13,7 @@ namespace B2.Client.Apis.AuthorizeAccountV1.Test
     public class TestAuthorizeAccountV1
     {
         [Test]
-        [Category("auth")]
+        [Category(TestCategories.Authentication)]
         public async Task TestAuthorizeAccountSuccess()
         {
             var client = new UnauthenticatedB2Client(new Uri(TestEnvironment.B2ApiUrl));

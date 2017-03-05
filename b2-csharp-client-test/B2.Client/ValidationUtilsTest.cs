@@ -7,7 +7,7 @@ namespace B2.Client.Test
     public class ValidationUtilsTest
     {
         [Test]
-        [Category("unit")]
+        [Category(TestCategories.Unit)]
         public void TestThrowIfNullThrowsOnNull()
         {
             const string testValue = null;
@@ -16,7 +16,7 @@ namespace B2.Client.Test
         }
 
         [Test]
-        [Category("unit")]
+        [Category(TestCategories.Unit)]
         public void TestThrowIfNullAcceptsNonNull()
         {
             const string testValue = "not null";

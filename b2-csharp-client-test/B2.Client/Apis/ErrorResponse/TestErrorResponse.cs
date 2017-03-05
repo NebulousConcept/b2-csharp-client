@@ -13,7 +13,7 @@ namespace B2.Client.Test.Apis.ErrorResponse
     {
 
         [Test]
-        [Category("integration")]
+        [Category(TestCategories.Integration)]
         public void TestErrorResponseFromApiCall()
         {
             var client = new UnauthenticatedB2Client(new Uri(TestEnvironment.B2ApiUrl));
