@@ -72,7 +72,7 @@ namespace B2.Client.Apis.ListBucketsV1
             /// The revision number of the bucket, which increments every time it is changed.
             /// </summary>
             [DataMember(Name = "revision", IsRequired = true)]
-            public uint Revision { get; }
+            public ulong Revision { get; }
 
 
             /// <summary>
@@ -86,7 +86,7 @@ namespace B2.Client.Apis.ListBucketsV1
             /// <param name="Revision">The revision number of the bucket, which increments every time it is changed.</param>
             [SuppressMessage("ReSharper", "InconsistentNaming")]
             public B2Bucket(string AccountId, string BucketId, string BucketName, BucketType BucketType,
-                            List<B2LifecycleRule> LifecycleRules, uint Revision)
+                            List<B2LifecycleRule> LifecycleRules, ulong Revision)
             {
                 this.AccountId = AccountId;
                 this.BucketId = BucketId;
