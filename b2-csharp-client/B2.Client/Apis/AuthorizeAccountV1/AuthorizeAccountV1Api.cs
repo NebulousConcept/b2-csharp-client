@@ -13,8 +13,8 @@ namespace B2.Client.Apis.AuthorizeAccountV1
     {
         /// <inheritdoc />
         public IEnumerable<UrlSegment> ResourceUrl { get; } = new List<UrlSegment> {
-            UrlSegment.Literal("b2api"),
-            UrlSegment.Literal("v1"),
+            UrlSegment.B2Api,
+            UrlSegment.V1,
             UrlSegment.Literal("b2_authorize_account")
         };
     }

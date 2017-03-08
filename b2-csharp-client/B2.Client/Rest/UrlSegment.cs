@@ -13,6 +13,17 @@ namespace B2.Client.Rest
     /// </summary>
     public abstract class UrlSegment
     {
+        /// <summary>
+        /// The 'b2api' literal.
+        /// </summary>
+        public static readonly UrlSegment B2Api = Literal("b2api");
+
+        /// <summary>
+        /// The 'v1' literal.
+        /// </summary>
+        public static readonly UrlSegment V1 = Literal("v1");
+
+
         private UrlSegment() { }
 
         /// <summary>
